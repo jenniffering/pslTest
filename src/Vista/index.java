@@ -17,7 +17,7 @@ import java.util.Scanner;
  */
 public class index {
     
-     static final String CADENA_FINAL = "0,0"; //cadena que indica el final de entrada.
+     static final String CADENA_FINAL = "0,0"; //cadena que indica el final de entradas.
      
      public static void main(String[] args) {
       // Establece los segmentos de cada numero
@@ -32,6 +32,7 @@ public class index {
                 
                 System.out.print("Espacio entre Digitos (0 a 5): ");
                 comando = lector.next();
+                
 
                 // Valida si es un numero
                 if (Controlador.isNumeric(comando)) 
@@ -51,6 +52,8 @@ public class index {
                     throw new IllegalArgumentException("Cadena " + comando
                             + " no es un entero");
                 }
+                
+                
                 
                 do
                 {
