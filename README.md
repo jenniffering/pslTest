@@ -32,3 +32,13 @@ Salida:
 |     |      | |     |       | |     |
 |     |      | |     |       | |     |
 |_ _ _|      | |_ _ _|  _ _ _| |_ _ _|
+
+</pre>
+Dentro de los cambios realizados estan: 
+1. Separación de clases y metodos para manejar mejor coherencia en las fuenciones de las clases.
+2.Implementación de modelo arquitectonico
+3. Correción del anti-patron "Magic Number".
+4.Nombres de variables mas descriptivos.
+5.Patron "Enum Types"
+____________________________________
+
