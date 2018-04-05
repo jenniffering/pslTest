@@ -1,5 +1,7 @@
 package idcrefactor.Controlador;
 
+import idcrefactor.Modelo.AdicionadorDeSegmentos;
+
 /**
  *
  * @author Jenniffer
@@ -7,6 +9,7 @@ package idcrefactor.Controlador;
 public class Controlador {
     int tamaño;
     int espacioEntreDigitos;
+    AdicionadorDeSegmentos imprimirNumero = new AdicionadorDeSegmentos();
 
     public Controlador() {
         this.tamaño= 0;
@@ -33,6 +36,7 @@ public class Controlador {
      */  
     public void procesar(String comando, int espacioEntreDigitos) {
         
+        this.espacioEntreDigitos=espacioEntreDigitos;
         String[] parametros;
 
         if (!comando.contains(",")) {
@@ -71,6 +75,9 @@ public class Controlador {
             throw new IllegalArgumentException("Parametro Size [" + parametros[0]
                     + "] no es un numero");
         }
+        // Realiza la impresion del numero
+       imprimirNumero.imprimirNumero(this.tamaño,parametros[1],this.espacioEntreDigitos);
+       
 
     }
     /**
@@ -87,5 +94,6 @@ public class Controlador {
             return false;
         }
     }
+     
     
 }

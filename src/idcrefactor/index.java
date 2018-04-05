@@ -16,7 +16,9 @@ import java.util.Scanner;
  * @author Jenniffer
  */
 public class index {
-     static final String CADENA_FINAL = "0,0";
+    
+     static final String CADENA_FINAL = "0,0"; //cadena que indica el final de entrada.
+     
      public static void main(String[] args) {
       // Establece los segmentos de cada numero
         List<String> listaComando = new ArrayList<>();

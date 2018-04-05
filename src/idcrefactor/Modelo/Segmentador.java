@@ -10,6 +10,7 @@ import java.util.List;
  * @author Jenniffer
  */
 public class Segmentador {
+    AdicionadorDeSegmentos imprimirMatriz = new AdicionadorDeSegmentos();
  
     /**
      *
@@ -17,7 +18,7 @@ public class Segmentador {
      *
      * @param numero Digito
      */
-    private void adicionarDigito(int numero) {
+    void adicionarDigito(int numero) {
 
         // Establece los segmentos de cada numero
         List<String> segmentosDeNumeros = new ArrayList<>();
@@ -95,13 +96,13 @@ public class Segmentador {
             default:
                 break;
         }
-/*
-        Iterator<Integer> iterator = segmentosDeNumeros.iterator();
+
+        Iterator<String> iterator = segmentosDeNumeros.iterator();
 
         while (iterator.hasNext()) {
-            adicionarSegmento(iterator.next());
+            imprimirMatriz.adicionarSegmento(iterator.next());
         }
-*/
+
     }
     
 }
