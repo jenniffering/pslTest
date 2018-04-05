@@ -118,8 +118,7 @@ public class ImpresorLCD {
 
     /**
      *
-     * Metodo encargado de definir los segmentos que componen un digito y
-     * a partir de los segmentos adicionar la representacion del digito a la matriz
+     * Metodo encargado de adicionar la representacion del digito a la matriz
      *
      * @param numero Digito
      */
@@ -214,7 +213,7 @@ public class ImpresorLCD {
             System.out.println();
         }
     }
-    
+   
 
 }
 

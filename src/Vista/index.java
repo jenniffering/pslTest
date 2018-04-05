@@ -22,9 +22,8 @@ public class index {
      public static void main(String[] args) {
       // Establece los segmentos de cada numero
         List<String> listaComando = new ArrayList<>();
-        String comando;
         
-
+        String comando; 
         int espacioEntreDigitos;
         
         try {
