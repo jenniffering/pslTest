@@ -25,7 +25,6 @@ public class ImpresorLCD {
     static final String POSICION_Y = "Y";
 
     // TODO code application logic here
-    //String entrada = JOptionPane.showInputDialog("Digite el numero");
     private int tamaño;
 
     // Calcula el numero de filasDigito
@@ -54,7 +53,6 @@ public class ImpresorLCD {
      * @param tamaño Tamaño Segmento
      * @param caracter Caracter Segmento
      */    
-    
     private void adicionarLinea(String[][] matriz, int[] punto, String posicionFija,
             int tamaño, String caracter) {
 

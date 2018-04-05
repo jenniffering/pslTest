@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package idcrefactor;
+package Vista;
 
 import idcrefactor.Controlador.Controlador;
 import java.util.ArrayList;

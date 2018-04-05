@@ -17,9 +17,7 @@ public class Controlador {
         this.tamaño= 0;
         this.espacioEntreDigitos=0;
     }
-
-   
-
+    
     /**
      *
      * Metodo encargado de procesar la entrada que contiene el tamaño del segmento
