@@ -5,7 +5,7 @@ package idcrefactor.Modelo;
  *
  * @author Jenniffer
  */
-public class ClasificadorDeSegmentos {
+public class AdicionadorDeSegmentos {
     
     // Puntos fijos
     private final int[] puntoFijo1;
@@ -22,7 +22,7 @@ public class ClasificadorDeSegmentos {
     static final String POSICION_X = "X";
     static final String POSICION_Y = "Y";
 
-    public ClasificadorDeSegmentos() {
+    public AdicionadorDeSegmentos() {
          // Inicializa variables
         this.puntoFijo1 = new int[2];
         this.puntoFijo2 = new int[2];
@@ -66,34 +66,34 @@ public class ClasificadorDeSegmentos {
      *
      * @param segmento Segmento a adicionar
      */  
-    private void adicionarSegmento(int segmento) {
+    private void adicionarSegmento(String segmento) {
 
         switch (segmento) {
-            case 1:
+            case "norOeste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo1, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 2:
+            case "surOeste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo2, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 3:
+            case "norEste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo5, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 4:
+            case "surEste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo4, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 5:
+            case "norte":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo1, POSICION_X,
                         this.tamaño, CARACTER_HORIZONTAL);
                 break;
-            case 6:
+            case "centro":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo2, POSICION_X,
                         this.tamaño, CARACTER_HORIZONTAL);
                 break;
-            case 7:
+            case "sur":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo3, POSICION_X,
                         this.tamaño, CARACTER_HORIZONTAL);
                 break;

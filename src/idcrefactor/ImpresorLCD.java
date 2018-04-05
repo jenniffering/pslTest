@@ -297,7 +297,7 @@ public class ImpresorLCD {
 
      /**
      *
-     * Metodo encargado de procesar la entrada que contiene el size del segmento
+     * Metodo encargado de procesar la entrada que contiene el tamaño del segmento
      * de los digitos y los digitos a imprimir
      *
      * @param comando Entrada que contiene el size del segmento de los digito
