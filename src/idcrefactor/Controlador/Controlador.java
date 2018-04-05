@@ -1,6 +1,7 @@
 package idcrefactor.Controlador;
 
-import idcrefactor.Modelo.AdicionadorDeSegmentos;
+
+import idcrefactor.Modelo.ImpresorLCD;
 
 /**
  *
@@ -9,7 +10,8 @@ import idcrefactor.Modelo.AdicionadorDeSegmentos;
 public class Controlador {
     int tamaño;
     int espacioEntreDigitos;
-    AdicionadorDeSegmentos imprimirNumero = new AdicionadorDeSegmentos();
+    
+    ImpresorLCD imprimirN = new ImpresorLCD();
 
     public Controlador() {
         this.tamaño= 0;
@@ -76,7 +78,9 @@ public class Controlador {
                     + "] no es un numero");
         }
         // Realiza la impresion del numero
-       imprimirNumero.imprimirNumero(this.tamaño,parametros[1],this.espacioEntreDigitos);
+    
+       imprimirN.imprimirNumero(this.tamaño,parametros[1],this.espacioEntreDigitos);
+      
        
 
     }
@@ -86,7 +90,7 @@ public class Controlador {
      *
      * @param cadena Cadena
      */  
-     public static boolean isNumeric(String cadena) {
+      public static boolean isNumeric(String cadena) {
         try {
             Integer.parseInt(cadena);
             return true;

@@ -3,12 +3,13 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package idcrefactor;
+package idcrefactor.Modelo;
 
 /**
  *
  * @author Jenniffer
  */
+
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -78,40 +79,40 @@ public class ImpresorLCD {
         }
     }
 
-    /**
+     /**
      *
      * Metodo encargado de un segmento a la matriz de Impresion
      *
      * @param segmento Segmento a adicionar
      */  
-    private void adicionarSegmento(int segmento) {
+    void adicionarSegmento(String segmento) {
 
         switch (segmento) {
-            case 1:
+            case "norOeste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo1, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 2:
+            case "surOeste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo2, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 3:
+            case "norEste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo5, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 4:
+            case "surEste":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo4, POSICION_Y,
                         this.tamaño, CARACTER_VERTICAL);
                 break;
-            case 5:
+            case "norte":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo1, POSICION_X,
                         this.tamaño, CARACTER_HORIZONTAL);
                 break;
-            case 6:
+            case "centro":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo2, POSICION_X,
                         this.tamaño, CARACTER_HORIZONTAL);
                 break;
-            case 7:
+            case "sur":
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo3, POSICION_X,
                         this.tamaño, CARACTER_HORIZONTAL);
                 break;
@@ -130,83 +131,83 @@ public class ImpresorLCD {
     private void adicionarDigito(int numero) {
 
         // Establece los segmentos de cada numero
-        List<Integer> segmentosDeNumeros = new ArrayList<>();
+        List<String> segmentosDeNumeros = new ArrayList<>();
 
         switch (numero) {
-            case 1:
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(4);
+             case 1:
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("surEste");
                 break;
             case 2:
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(6);
-                segmentosDeNumeros.add(2);
-                segmentosDeNumeros.add(7);
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("centro");
+                segmentosDeNumeros.add("surOeste");
+                segmentosDeNumeros.add("sur");
                 break;
             case 3:
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(6);
-                segmentosDeNumeros.add(4);
-                segmentosDeNumeros.add(7);
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("centro");
+                segmentosDeNumeros.add("surEste");
+                segmentosDeNumeros.add("sur");
                 break;
             case 4:
-                segmentosDeNumeros.add(1);
-                segmentosDeNumeros.add(6);
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add("norOeste");
+                segmentosDeNumeros.add("centro");
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("surEste");
                 break;
             case 5:
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(1);
-                segmentosDeNumeros.add(6);
-                segmentosDeNumeros.add(4);
-                segmentosDeNumeros.add(7);
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("norOeste");
+                segmentosDeNumeros.add("centro");
+                segmentosDeNumeros.add("surEste");
+                segmentosDeNumeros.add("sur");
                 break;
             case 6:
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(1);
-                segmentosDeNumeros.add(6);
-                segmentosDeNumeros.add(2);
-                segmentosDeNumeros.add(7);
-                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("norOeste");
+                segmentosDeNumeros.add("centro");
+                segmentosDeNumeros.add("surOeste");
+                segmentosDeNumeros.add("sur");
+                segmentosDeNumeros.add("surEste");
                 break;
             case 7:
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("surEste");
                 break;
             case 8:
-                segmentosDeNumeros.add(1);
-                segmentosDeNumeros.add(2);
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(4);
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(6);
-                segmentosDeNumeros.add(7);
+                segmentosDeNumeros.add("norOeste");
+                segmentosDeNumeros.add("surOeste");
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("surEste");
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("centro");
+                segmentosDeNumeros.add("sur");
                 break;
             case 9:
-                segmentosDeNumeros.add(1);
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(4);
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(6);
-                segmentosDeNumeros.add(7);
+                segmentosDeNumeros.add("norOeste");
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("surEste");
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("centro");
+                segmentosDeNumeros.add("sur");
                 break;
             case 0:
-                segmentosDeNumeros.add(1);
-                segmentosDeNumeros.add(2);
-                segmentosDeNumeros.add(3);
-                segmentosDeNumeros.add(4);
-                segmentosDeNumeros.add(5);
-                segmentosDeNumeros.add(7);
+                segmentosDeNumeros.add("norOeste");
+                segmentosDeNumeros.add("surOeste");
+                segmentosDeNumeros.add("norEste");
+                segmentosDeNumeros.add("surEste");
+                segmentosDeNumeros.add("norte");
+                segmentosDeNumeros.add("sur");
                 break;
             default:
                 break;
         }
 
-        Iterator<Integer> iterator = segmentosDeNumeros.iterator();
+        Iterator<String> iterator = segmentosDeNumeros.iterator();
 
         while (iterator.hasNext()) {
             adicionarSegmento(iterator.next());
@@ -221,7 +222,7 @@ public class ImpresorLCD {
      * @param numeroImp Numero a Imprimir
      * @param espacio Espacio Entre digitos
      */    
-    private void imprimirNumero(int size, String numeroImp, int espacio) 
+    public void imprimirNumero(int size, String numeroImp, int espacio) 
     {
         int pivotX = 0;
         char[] digitos;
@@ -292,81 +293,6 @@ public class ImpresorLCD {
                 System.out.print(this.matrizDeImpresion[i][j]);
             }
             System.out.println();
-        }
-    }
-
-     /**
-     *
-     * Metodo encargado de procesar la entrada que contiene el tamaño del segmento
-     * de los digitos y los digitos a imprimir
-     *
-     * @param comando Entrada que contiene el size del segmento de los digito
-     * y el numero a imprimir
-     * @param espacioDig Espacio Entre digitos
-     */  
-    public void procesar(String comando, int espacioDig) {
-        
-        String[] parametros;
-        
-        int tam;
-
-        if (!comando.contains(",")) {
-            throw new IllegalArgumentException("Cadena " + comando
-                    + " no contiene caracter ,");
-        }
-        
-        //Se hace el split de la cadena
-        parametros = comando.split(",");
-        
-        //Valida la cantidad de parametros
-        if(parametros.length>2)
-        {
-           throw new IllegalArgumentException("Cadena " + comando
-                    + " contiene mas caracter ,"); 
-        }
-        
-        //Valida la cantidad de parametros
-        if(parametros.length<2)
-        {
-           throw new IllegalArgumentException("Cadena " + comando
-                    + " no contiene los parametros requeridos"); 
-        }
-        
-        //Valida que el parametro size sea un numerico
-        if(isNumeric(parametros[0]))
-        {
-            tam = Integer.parseInt(parametros[0]);
-            
-            // se valida que el size este entre 1 y 10
-            if(tam <1 || tam >10)
-            {
-                throw new IllegalArgumentException("El parametro size ["+tam
-                        + "] debe estar entre 1 y 10");
-            }
-        }
-        else
-        {
-            throw new IllegalArgumentException("Parametro Size [" + parametros[0]
-                    + "] no es un numero");
-        }
-
-        // Realiza la impresion del numero
-        imprimirNumero(tam, parametros[1],espacioDig);
-
-    }
-
-    /**
-     *
-     * Metodo encargado de validar si una cadena es numerica
-     *
-     * @param cadena Cadena
-     */  
-    static boolean isNumeric(String cadena) {
-        try {
-            Integer.parseInt(cadena);
-            return true;
-        } catch (NumberFormatException ex) {
-            return false;
         }
     }
 

@@ -64,9 +64,6 @@ public class index {
                 }while (!comando.equalsIgnoreCase(CADENA_FINAL)); 
             }
 
-            
-            
-            
             Controlador entradaInformacion = new Controlador();
 
             Iterator<String> iterator = listaComando.iterator();
