@@ -30,11 +30,11 @@ public class ImpresorLCD {
 
     // TODO code application logic here
     //String entrada = JOptionPane.showInputDialog("Digite el numero");
-    private int size;
+    private int tamaño;
 
-    // Calcula el numero de filasDig
-    private int filasDig;
-    private int columDig;
+    // Calcula el numero de filasDigito
+    private int filasDigito;
+    private int columnasDigito;
     private int totalFilas;
     private int totalColum;
 
@@ -53,16 +53,16 @@ public class ImpresorLCD {
      *
      * @param matriz Matriz Impresion
      * @param punto Punto Pivote
-     * @param posFija Posicion Fija
-     * @param size Tamaño Segmento
+     * @param posicionFija Posicion Fija
+     * @param tamaño Tamaño Segmento
      * @param caracter Caracter Segmento
      */    
-    private void adicionarLinea(String[][] matriz, int[] punto, String posFija,
-            int size, String caracter) {
+    private void adicionarLinea(String[][] matriz, int[] punto, String posicionFija,
+            int tamaño, String caracter) {
 
-        if (posFija.equalsIgnoreCase(POSICION_X)) 
+        if (posicionFija.equalsIgnoreCase(POSICION_X)) 
         {
-            for (int y = 1; y <= size; y++) 
+            for (int y = 1; y <= tamaño; y++) 
             {
                 int valor = punto[1] + y;
                 matriz[punto[0]][valor] = caracter;
@@ -70,7 +70,7 @@ public class ImpresorLCD {
         } 
         else 
         {
-            for (int i = 1; i <= size; i++) 
+            for (int i = 1; i <= tamaño; i++) 
             {
                 int valor = punto[0] + i;
                 matriz[valor][punto[1]] = caracter;
@@ -89,31 +89,31 @@ public class ImpresorLCD {
         switch (segmento) {
             case 1:
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo1, POSICION_Y,
-                        this.size, CARACTER_VERTICAL);
+                        this.tamaño, CARACTER_VERTICAL);
                 break;
             case 2:
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo2, POSICION_Y,
-                        this.size, CARACTER_VERTICAL);
+                        this.tamaño, CARACTER_VERTICAL);
                 break;
             case 3:
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo5, POSICION_Y,
-                        this.size, CARACTER_VERTICAL);
+                        this.tamaño, CARACTER_VERTICAL);
                 break;
             case 4:
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo4, POSICION_Y,
-                        this.size, CARACTER_VERTICAL);
+                        this.tamaño, CARACTER_VERTICAL);
                 break;
             case 5:
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo1, POSICION_X,
-                        this.size, CARACTER_HORIZONTAL);
+                        this.tamaño, CARACTER_HORIZONTAL);
                 break;
             case 6:
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo2, POSICION_X,
-                        this.size, CARACTER_HORIZONTAL);
+                        this.tamaño, CARACTER_HORIZONTAL);
                 break;
             case 7:
                 adicionarLinea(this.matrizDeImpresion, this.puntoFijo3, POSICION_X,
-                        this.size, CARACTER_HORIZONTAL);
+                        this.tamaño, CARACTER_HORIZONTAL);
                 break;
             default:
                 break;
@@ -130,83 +130,83 @@ public class ImpresorLCD {
     private void adicionarDigito(int numero) {
 
         // Establece los segmentos de cada numero
-        List<Integer> segList = new ArrayList<>();
+        List<Integer> segmentosDeNumeros = new ArrayList<>();
 
         switch (numero) {
             case 1:
-                segList.add(3);
-                segList.add(4);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(4);
                 break;
             case 2:
-                segList.add(5);
-                segList.add(3);
-                segList.add(6);
-                segList.add(2);
-                segList.add(7);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(6);
+                segmentosDeNumeros.add(2);
+                segmentosDeNumeros.add(7);
                 break;
             case 3:
-                segList.add(5);
-                segList.add(3);
-                segList.add(6);
-                segList.add(4);
-                segList.add(7);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(6);
+                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add(7);
                 break;
             case 4:
-                segList.add(1);
-                segList.add(6);
-                segList.add(3);
-                segList.add(4);
+                segmentosDeNumeros.add(1);
+                segmentosDeNumeros.add(6);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(4);
                 break;
             case 5:
-                segList.add(5);
-                segList.add(1);
-                segList.add(6);
-                segList.add(4);
-                segList.add(7);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(1);
+                segmentosDeNumeros.add(6);
+                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add(7);
                 break;
             case 6:
-                segList.add(5);
-                segList.add(1);
-                segList.add(6);
-                segList.add(2);
-                segList.add(7);
-                segList.add(4);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(1);
+                segmentosDeNumeros.add(6);
+                segmentosDeNumeros.add(2);
+                segmentosDeNumeros.add(7);
+                segmentosDeNumeros.add(4);
                 break;
             case 7:
-                segList.add(5);
-                segList.add(3);
-                segList.add(4);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(4);
                 break;
             case 8:
-                segList.add(1);
-                segList.add(2);
-                segList.add(3);
-                segList.add(4);
-                segList.add(5);
-                segList.add(6);
-                segList.add(7);
+                segmentosDeNumeros.add(1);
+                segmentosDeNumeros.add(2);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(6);
+                segmentosDeNumeros.add(7);
                 break;
             case 9:
-                segList.add(1);
-                segList.add(3);
-                segList.add(4);
-                segList.add(5);
-                segList.add(6);
-                segList.add(7);
+                segmentosDeNumeros.add(1);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(6);
+                segmentosDeNumeros.add(7);
                 break;
             case 0:
-                segList.add(1);
-                segList.add(2);
-                segList.add(3);
-                segList.add(4);
-                segList.add(5);
-                segList.add(7);
+                segmentosDeNumeros.add(1);
+                segmentosDeNumeros.add(2);
+                segmentosDeNumeros.add(3);
+                segmentosDeNumeros.add(4);
+                segmentosDeNumeros.add(5);
+                segmentosDeNumeros.add(7);
                 break;
             default:
                 break;
         }
 
-        Iterator<Integer> iterator = segList.iterator();
+        Iterator<Integer> iterator = segmentosDeNumeros.iterator();
 
         while (iterator.hasNext()) {
             adicionarSegmento(iterator.next());
@@ -226,19 +226,19 @@ public class ImpresorLCD {
         int pivotX = 0;
         char[] digitos;
 
-        this.size = size;
+        this.tamaño = size;
 
         // Calcula el numero de filas cada digito
-        this.filasDig = (2 * this.size) + 3;
+        this.filasDigito = (2 * this.tamaño) + 3;
 
         // Calcula el numero de columna de cada digito
-        this.columDig = this.size + 2;
+        this.columnasDigito = this.tamaño + 2;
 
         // Calcula el total de filas de la matriz en la que se almacenaran los digitos
-        this.totalFilas = this.filasDig;
+        this.totalFilas = this.filasDigito;
 
         // Calcula el total de columnas de la matriz en la que se almacenaran los digitos
-        this.totalColum = (this.columDig * numeroImp.length())
+        this.totalColum = (this.columnasDigito * numeroImp.length())
                 + (espacio * numeroImp.length());
 
         // crea matriz para almacenar los numero a imprimir
@@ -269,19 +269,19 @@ public class ImpresorLCD {
             this.puntoFijo1[0] = 0;
             this.puntoFijo1[1] = 0 + pivotX;
 
-            this.puntoFijo2[0] = (this.filasDig / 2);
+            this.puntoFijo2[0] = (this.filasDigito / 2);
             this.puntoFijo2[1] = 0 + pivotX;
 
-            this.puntoFijo3[0] = (this.filasDig - 1);
+            this.puntoFijo3[0] = (this.filasDigito - 1);
             this.puntoFijo3[1] = 0 + pivotX;
 
-            this.puntoFijo4[0] = (this.columDig - 1);
-            this.puntoFijo4[1] = (this.filasDig / 2) + pivotX;
+            this.puntoFijo4[0] = (this.columnasDigito - 1);
+            this.puntoFijo4[1] = (this.filasDigito / 2) + pivotX;
 
             this.puntoFijo5[0] = 0;
-            this.puntoFijo5[1] = (this.columDig - 1) + pivotX;
+            this.puntoFijo5[1] = (this.columnasDigito - 1) + pivotX;
 
-            pivotX = pivotX + this.columDig + espacio;
+            pivotX = pivotX + this.columnasDigito + espacio;
 
             adicionarDigito(numero);
         }

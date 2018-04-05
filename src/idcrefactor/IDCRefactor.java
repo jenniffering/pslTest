@@ -5,6 +5,7 @@
  */
 package idcrefactor;
 
+import idcrefactor.Controlador.Controlador;
 import static idcrefactor.IDCRefactor.CADENA_FINAL;
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -26,6 +27,8 @@ public class IDCRefactor {
       // Establece los segmentos de cada numero
         List<String> listaComando = new ArrayList<>();
         String comando;
+        
+
         int espacioDig;
         
         try {
