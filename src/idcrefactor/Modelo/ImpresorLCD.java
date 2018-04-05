@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package idcrefactor.Modelo;
 
 /**
@@ -47,7 +42,8 @@ public class ImpresorLCD {
         this.puntoFijo4 = new int[2];
         this.puntoFijo5 = new int[2];
     }
-
+    
+    
     /**
      *
      * Metodo encargado de añadir una linea a la matriz de Impresion
@@ -58,6 +54,7 @@ public class ImpresorLCD {
      * @param tamaño Tamaño Segmento
      * @param caracter Caracter Segmento
      */    
+    
     private void adicionarLinea(String[][] matriz, int[] punto, String posicionFija,
             int tamaño, String caracter) {
 
@@ -130,91 +127,15 @@ public class ImpresorLCD {
      */
     private void adicionarDigito(int numero) {
 
-        // Establece los segmentos de cada numero
-        List<String> segmentosDeNumeros = new ArrayList<>();
-
-        switch (numero) {
-             case 1:
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("surEste");
-                break;
-            case 2:
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("centro");
-                segmentosDeNumeros.add("surOeste");
-                segmentosDeNumeros.add("sur");
-                break;
-            case 3:
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("centro");
-                segmentosDeNumeros.add("surEste");
-                segmentosDeNumeros.add("sur");
-                break;
-            case 4:
-                segmentosDeNumeros.add("norOeste");
-                segmentosDeNumeros.add("centro");
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("surEste");
-                break;
-            case 5:
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("norOeste");
-                segmentosDeNumeros.add("centro");
-                segmentosDeNumeros.add("surEste");
-                segmentosDeNumeros.add("sur");
-                break;
-            case 6:
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("norOeste");
-                segmentosDeNumeros.add("centro");
-                segmentosDeNumeros.add("surOeste");
-                segmentosDeNumeros.add("sur");
-                segmentosDeNumeros.add("surEste");
-                break;
-            case 7:
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("surEste");
-                break;
-            case 8:
-                segmentosDeNumeros.add("norOeste");
-                segmentosDeNumeros.add("surOeste");
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("surEste");
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("centro");
-                segmentosDeNumeros.add("sur");
-                break;
-            case 9:
-                segmentosDeNumeros.add("norOeste");
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("surEste");
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("centro");
-                segmentosDeNumeros.add("sur");
-                break;
-            case 0:
-                segmentosDeNumeros.add("norOeste");
-                segmentosDeNumeros.add("surOeste");
-                segmentosDeNumeros.add("norEste");
-                segmentosDeNumeros.add("surEste");
-                segmentosDeNumeros.add("norte");
-                segmentosDeNumeros.add("sur");
-                break;
-            default:
-                break;
-        }
-
-        Iterator<String> iterator = segmentosDeNumeros.iterator();
+        Segmentacion segmento = new Segmentacion(numero);
+        
+        Iterator<String> iterator = segmento.getSetmento().iterator();
 
         while (iterator.hasNext()) {
             adicionarSegmento(iterator.next());
         }
     }
-
-    /**
+/**
      *
      * Metodo encargado de imprimir un numero
      *
@@ -295,6 +216,7 @@ public class ImpresorLCD {
             System.out.println();
         }
     }
+    
 
 }
 

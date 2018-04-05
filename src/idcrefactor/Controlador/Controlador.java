@@ -18,13 +18,6 @@ public class Controlador {
         this.espacioEntreDigitos=0;
     }
 
-    public int getTamaño() {
-        return this.tamaño;
-    }
-
-    public int getEspacioEntreDigitos() {
-        return this.espacioEntreDigitos;
-    }
    
 
     /**
