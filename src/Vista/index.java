@@ -53,8 +53,6 @@ public class index {
                             + " no es un entero");
                 }
                 
-                
-                
                 do
                 {
                     System.out.print("Entrada: ");
